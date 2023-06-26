@@ -1,29 +1,29 @@
 version: '3'
 services:
-  aws:
-    image: rahamshaik/trainingsaws:latest
+  devops:
+    image: rahamshaik/devopsreponit:latest
     ports:
-      - "8000:80"
+      - "90:80"
     deploy:
       replicas: 3
 
-  devops:
-    image: rahamshaik/trainingsdevops:latest
+  aws:
+    image: rahamshaik/awsreponit:latest
     ports:
-      - "8001:80"
+      - "91:80"
+    deploy:
+      replicas: 3
+
+  datascience:
+    image: rahamshaik/datasciencereponit:latest
+    ports:
+      - "92:80"
     deploy:
       replicas: 3
 
   azure:
-    image: rahamshaik/trainingsazure:latest
+    image: rahamshaik/azurereponit:latest
     ports:
-      - "8002:80"
+      - "93:80"
     deploy:
-      replicas: 5
-
-  datascience:
-    image: rahamshaik/trainingsdatascience:latest
-    ports:
-      - "8003:80"
-    deploy:
-      replicas: 5
+      replicas: 3
